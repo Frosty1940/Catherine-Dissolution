@@ -1,0 +1,8 @@
+"cat_dissolution"
+{
+	"base"		"catherine"
+	"title"		"CAT : Dissolution"
+	"author"	"Renée"
+	"menusystem"	"1"
+	"maps"		"^rp_"
+}
