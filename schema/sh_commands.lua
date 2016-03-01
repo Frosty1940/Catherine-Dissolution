@@ -16,6 +16,60 @@ You should have received a copy of the GNU General Public License
 along with Catherine.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
+local function checkStaticRadio( pl, text )
+	for k, v in pairs( ents.FindInSphere( pl:GetPos( ), 100 ) ) do
+		if ( v:GetClass( ) == "cat_dissolution_static_radio" and v:GetNetVar( "active" ) and v:GetNetVar( "freq" ) != "XXX.X" and v:GetNetVar( "freq" ) != "" ) then
+			Schema:SayRadio( pl, text )
+			return true
+		end
+	end
+	
+	return false
+end
+
+catherine.command.Register( {
+	uniqueID = "&uniqueID_radio",
+	command = "radio",
+	syntax = "[Text]",
+	desc = "Run a Radio chat.",
+	runFunc = function( pl, args )
+		local text = table.concat( args, " " )
+		
+		if ( text == "" ) then
+			catherine.util.NotifyLang( pl, "Basic_Notify_InputText" )
+			return
+		end
+		
+		if ( pl:HasItem( "portable_radio" ) ) then
+			local itemData = pl:GetInvItemDatas( "portable_radio" )
+			
+			if ( itemData.toggle ) then
+				if ( itemData.freq != "xxx.x" and itemData.freq != "" ) then
+					Schema:SayRadio( pl, text )
+				else
+					local success = checkStaticRadio( pl, text )
+					
+					if ( !success ) then
+						catherine.util.NotifyLang( pl, "Item_Notify_Error05_PR" )
+					end
+				end
+			else
+				local success = checkStaticRadio( pl, text )
+				
+				if ( !success ) then
+					catherine.util.NotifyLang( pl, "Item_Notify_Error04_PR" )
+				end
+			end
+		else
+			local success = checkStaticRadio( pl, text )
+			
+			if ( !success ) then
+				catherine.util.NotifyLang( pl, "Item_Notify_Error03_PR" )
+			end
+		end
+	end
+} )
+
 catherine.command.Register( {
 	uniqueID = "&uniqueID_zombieAdd",
 	command = "zombieadd",

@@ -16,12 +16,12 @@ You should have received a copy of the GNU General Public License
 along with Catherine.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
-local ITEM = catherine.item.New( "weapon_m9k_famas", "WEAPON" )
+local ITEM = catherine.item.New( "weapon_m9k_fal", "WEAPON" )
 ITEM.name = "^Item_Name_Famas"
 ITEM.desc = "^Item_Desc_Famas"
 ITEM.cost = 5000
 ITEM.model = "models/weapons/w_tct_famas.mdl"
-ITEM.weaponClass = string.gsub(ITEM.uniqueID, "weapon_", "")
+ITEM.weaponClass = string.gsub( ITEM.uniqueID, "weapon_", "" )
 ITEM.weaponType = "primary"
 
 catherine.item.Register( ITEM )

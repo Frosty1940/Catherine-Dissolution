@@ -29,19 +29,20 @@ FACTION.models = { }
 for i = 34, 41 do
 	for i2 = 1, 9 do
 		
-		FACTION.models[ #FACTION.models + 1 ] = Model( "models/humans/group"..i.."/male_0"..i2..".mdl" )
+		FACTION.models[ #FACTION.models + 1 ] = Model("models/humans/group"..i.."/male_0"..i2..".mdl")
 	end
 	
-	for i2 = 1, 7 do
-		if (i != 5) then
+	for i3 = 1, 7 do
+		if (i3 != 5) then
 		
-			FACTION.models[ #FACTION.models + 1 ] = Model( "models/humans/group"..i.."/female_0"..i2.."mdl" )
+			FACTION.models[ #FACTION.models + 1 ] = Model("models/humans/group"..i.."/female_0"..i3..".mdl")
 		end
 	end
 end
 
 
 function FACTION:PlayerFirstSpawned( pl )
+	catherine.item.Give( pl, "flashlight" )
 end
 
 for k, v in pairs( FACTION.models ) do

@@ -21,7 +21,7 @@ ITEM.name = "^Item_Name_AK74"
 ITEM.desc = "^Item_Desc_AK74"
 ITEM.cost = 4000
 ITEM.model = "models/weapons/w_ak47_m9k.mdl"
-ITEM.weaponClass = string.gsub(ITEM.uniqueID, "weapon_", "")
+ITEM.weaponClass = string.gsub( ITEM.uniqueID, "weapon_", "" )
 ITEM.weaponType = "primary"
 
 catherine.item.Register( ITEM )

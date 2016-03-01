@@ -17,6 +17,3 @@ along with Catherine.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
 resource.AddWorkshop( "182104437" ) -- Dissolution Content <http://steamcommunity.com/sharedfiles/filedetails/?id=182104437>
-resource.AddWorkshop( "128089118" ) -- M9K Assault Rifles <http://steamcommunity.com/sharedfiles/filedetails/?id=128089118>
-resource.AddWorkshop( "128091208" ) -- M9K Heavy Weapons <http://steamcommunity.com/sharedfiles/filedetails/?id=128091208>
-resource.AddWorkshop( "128093075" ) -- M9K Small Arms pack <http://steamcommunity.com/sharedfiles/filedetails/?id=128093075>

@@ -32,7 +32,6 @@ for i = 1, 9 do
 end
 
 for i = 1, 7 do
-	
 	if (i != 5) then
 		
 		FACTION.models[#FACTION.models + 1] = Model("models/army/female_0"..i..".mdl")
@@ -40,6 +39,13 @@ for i = 1, 7 do
 end
 
 function FACTION:PlayerFirstSpawned( pl )
+	catherine.item.Give( pl, "small_bag" )
+	catherine.item.Give( pl, "portable_radio" )
+	catherine.item.Give( pl, "painkiller", 1 )
+	catherine.item.Give( pl, "weapon_stunstick" )
+	catherine.item.Give( pl, "weapon_m9k_m4a1" )
+	catherine.item.Give( pl, "weapon_m9k_m92beretta" )
+	catherine.item.Give( pl, "flashlight" )
 end
 
 for k, v in pairs( FACTION.models ) do

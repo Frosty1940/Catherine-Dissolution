@@ -21,25 +21,28 @@ BASE.name = "Junk Base"
 BASE.desc = "A Junk."
 BASE.category = "^Item_Category_Junk"
 BASE.worth = 5
+BASE.scrapSound = {
+	"buttons/button5.wav"
+}
 BASE.func = { }
 BASE.func.Scrap = {
 	text = "^Item_FuncStr01_Junk",
 	canShowIsWorld = true,
 	canShowIsMenu = true,
 	func = function( pl, itemTable, ent )
+		pl:EmitSound( type( itemTable.scrapSound ) == "table" and table.Random( itemTable.scrapSound ) or itemTable.scrapSound )
+		
 		if ( SERVER ) then
 			local amount = math.max( itemTable.worth + math.random( -5, 5 ), 1 )
 
 			timer.Simple( 0.7, function( )
-				if ( !IsValid( pl ) ) then
+				if ( !IsValid(pl) ) then
 					return
 				end
 
 				catherine.util.NotifyLang( pl, "Item_FuncStr02_Junk", catherine.cash.GetCompleteName( amount ) )
 				catherine.cash.Give( pl, amount )
 			end )
-		else
-			pl:EmitSound( "buttons/button5.wav" )
 		end
 		
 		if ( type( ent ) == "Entity" ) then
@@ -54,7 +57,7 @@ BASE.func.Scrap = {
 
 if ( CLIENT ) then
 	function BASE:DoRightClick( pl, itemData )
-		catherine.item.Work( self.uniqueID, "scrap", true )
+		catherine.item.Work( self.uniqueID, "Scrap", true )
 	end
 end
 

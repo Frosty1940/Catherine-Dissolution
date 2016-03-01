@@ -18,7 +18,7 @@ along with Catherine.  If not, see <http://www.gnu.org/licenses/>.
 
 local PLUGIN = PLUGIN
 PLUGIN.name = "^Junk_Plugin_Name"
-PLUGIN.author = "Chessnut & Renee"
+PLUGIN.author = "Chessnut, Renée"
 PLUGIN.desc = "^Junk_Plugin_Desc"
 
 catherine.language.Merge( "english", {
@@ -119,8 +119,8 @@ catherine.language.Merge( "korean", {
 	[ "Item_Desc_JunkPan" ] = "녹슨 금속 프라이팬입니다.",
 	[ "Item_Name_JunkPipe" ] = "파이프",
 	[ "Item_Desc_JunkPipe" ] = "물을 흐르게 하는 데 쓰이던 금속 파이프입니다.",
-	[ "Item_Name_JunkPot" ] = "냄비",
-	[ "Item_Desc_JunkPot" ] = "녹슨 금속 냄비입니다.",
+	[ "Item_Name_JunkPot" ] = "솥",
+	[ "Item_Desc_JunkPot" ] = "녹슨 금속 솥입니다.",
 	[ "Item_Name_JunkTV" ] = "텔레비전 수상기",
 	[ "Item_Desc_JunkTV" ] = "유리가 깨져있는 오래된 텔레비전 수상기입니다.",
 	[ "Item_Name_JunkTire" ] = "타이어",
@@ -195,7 +195,7 @@ function PLUGIN:AddArea( pos, rarity )
 end
 
 function PLUGIN:RemoveArea( pos, rad )
-	radius = radius or 128
+	rad = rad or 128
 
 	local i = 0
 
@@ -207,7 +207,7 @@ function PLUGIN:RemoveArea( pos, rad )
 	end
 
 	if ( i > 0 ) then
-		self:SaveData( )
+		self:SaveData()
 	end
 
 	return i
@@ -216,7 +216,7 @@ end
 local PLUGIN = PLUGIN
 
 catherine.command.Register( {
-	uniqueID = "&uniqueID_junkAdd",
+	uniqueID = "&uniqueID_junkRemove",
 	command = "junkadd",
 	desc = "Add the Spawn Point for junk items.",
 	syntax = "[Number rarity]",

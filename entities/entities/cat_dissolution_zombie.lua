@@ -21,7 +21,9 @@ along with Catherine.  If not, see <http://www.gnu.org/licenses/>.
 	https://github.com/Chessnut/Dissolution
 ]]--
 
-AddCSLuaFile()
+local PLUGIN = PLUGIN
+
+AddCSLuaFile( )
 
 ENT.Base = "base_nextbot"
 ENT.PrintName = "Zombie"
