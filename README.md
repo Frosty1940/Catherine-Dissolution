@@ -1,8 +1,8 @@
 Catherine-Dissolution
 =========
-##### Dissolution is a post-apocalyptic roleplay schema for the Catherine framework by Renée.
+##### Dissolution is a post-apocalyptic roleplay schema for the Catherine framework by Frosty.
 
-This code has brought from Catherine NutScript-Dissolution: https://github.com/Chessnut/Dissolution
+This code has brought from NutScript Dissolution: https://github.com/Chessnut/Dissolution
 
 
 Installation
